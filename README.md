@@ -1,5 +1,5 @@
 # Bookshop
-a simple webapp for buying books online 
+a simple webapp for buying books online, my first independent project
 # Table of Contents
 * [General info](#general-info)
 * [Technologies](#technologies)
@@ -11,11 +11,6 @@ My main purpose for making this project was practising working with Java Servlet
 # Technologies
 Java Servlet, JSP, HTML, CSS, Java Script, MySQL
 
-# Screenshots
-![](/images/index.png)
-![](/images/bestsellers.png)
-![](/images/advancedSearch.png)
-![](/images/myWishList.png)
 # Features 
  1. Displaying books in stock
  2. Displaying Top 5 according to the number of sold copies
