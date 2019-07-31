@@ -1,0 +1,223 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ page import = "bookshop.model.User"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Welcome</title>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: gold;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: #CFB53B;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: gold;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+body{
+font-color: black
+
+}
+.input {
+  background-color: gold
+  border: none;
+  color: white;
+  
+  text-align: center;
+  text-decoration: none;
+  display: inline-block; 
+  font-size: 14px;
+ 
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.search1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid grey;
+  margin-top: 6px;
+  margin-bottom: 2px;
+}
+
+.search1:hover {
+  background-color: gold;
+  color: white;
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: gold;
+   color: black;
+   text-align: center;
+   
+}
+
+section#offers ul{
+    list-style-type: none;
+    background-color:lightgrey;
+    margin-top: 550px;
+}
+
+#offers h2{
+    height: 0;
+    text-indent: -10000px;
+}
+
+#offers li{
+    float: left;
+    width: 32%;
+}
+
+#offers li:nth-child(2){
+    margin: 0 2%;
+}
+
+#offers li h3{
+    text-align: center;
+    color: #888;
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    text-decoration: overline;
+}
+
+#offers p{
+    text-align: center;
+    width: 80%;
+    margin: 0 10%;
+    font-size: 14px;
+    color: #888;
+    line-height: 1.4em;
+}
+
+body, html {
+  height: 100%;
+}
+
+.bg { 
+  /* The image used */
+  background-image: url("images/book_covers.jpg");
+ 
+  height: 70%; 
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+</head>
+<body bgcolor="lightgrey">
+<div class="bg">
+<ul>
+  <li><a href="index.html"><i class='fas fa-home' style='font-size:24px'></i></a></li>
+  <li><a href="AvailableBooks">Books in stock</a></li>
+   <li><a href="Bestsellers">Bestsellers</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">My account</a>
+    <div class="dropdown-content">
+      <a href="signIn.html">Sign in</a>
+      <a href="register.html">Register</a>
+      <a href="WishListServlet">My wishlist</a>
+      <a href="MyOrders">My orders</a>
+       <a href="SignOut">Sign out</a>
+    </div>
+    <li><form action='SearchTitle'>
+
+<input type="text" name="search"  size="40" style="height: 38px;"placeholder="Search by title"/>
+<input class="input search1" type="submit" size="60" style="height: 40px;" value="Search"/>
+
+</form></li>
+    
+    <li><a href="advancedSearch.html">Advanced search</a></li>
+  
+</ul>
+<%String username = (String)session.getAttribute("newlyRegistered"); %>
+<div style="margin: 30px 85px; "><p style="font-size:150%">Welcome, <%=username%>! To activate your account, please sign in </p></div>
+
+<section id="offers">
+                
+                <ul>
+                    <li>
+                      
+                        <h3>- DISCOUNT -</h3>
+                        <p>Get 5% discount for every fifth book. Get 10% discount for your birthday. Free discount coupons for newly registered!</p>
+                    </li>
+                    <li>
+                       
+                        <h3>- BESTSELLERS -</h3>
+                        <p>Check out our list of top 5 bestsellers. The list gets updated with each book sale so you are always informed about the most popular books!</p>
+                    </li>
+                    <li>
+                        
+                        <h3>- SAVE NOW, BUY LATER -</h3>
+                        <p>Add books that you will potentially buy to wishlist and buy later or wait for your birthday :)</p>
+                    </li>
+                </ul>
+            </section>
+
+
+<div class="footer">
+
+  <p align="center">Follow us</p>
+  
+<p align="center"><i class='fab fa-facebook-square' style='font-size:24px'></i>&nbsp;
+   <i class='fab fa-instagram' style='font-size:24px'></i>&nbsp;<i class="fab fa-pinterest" style='font-size:24px'></i>
+   </p>
+   
+</div>
+
+
+</div>
+
+</body>
+</html>
